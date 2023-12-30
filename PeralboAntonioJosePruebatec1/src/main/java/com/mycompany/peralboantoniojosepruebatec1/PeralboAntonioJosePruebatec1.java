@@ -9,13 +9,17 @@ import java.util.Scanner;
 public class PeralboAntonioJosePruebatec1 {
 
     public static void main(String[] args) throws ParseException {
-
+        boolean flag = false;
         int optionCrud;
         ServicesEmpleado servicio = new ServicesEmpleado();
         Scanner scan = new Scanner(System.in);
 //Solicitamos por consola que seleccione la opcion que necesite
-        System.out.println("Seleciones la opcion que desee : ");
-        System.out.println("\n 1. Agregar usuario.");
+        System.out.println("\n");
+        System.out.println(" -----------------------------------");
+        System.out.println(" -Seleciones la opcion que desee : -");
+        System.out.println(" -----------------------------------");
+        System.out.println("\n");
+        System.out.println(" 1 . Agregar usuario.");
         System.out.println(" 2 . Ver lista de usuarios.");
         System.out.println(" 3 . Editar usuario.");
         System.out.println(" 4 . Eliminar usuario.");
@@ -24,9 +28,9 @@ public class PeralboAntonioJosePruebatec1 {
 
         optionCrud = scan.nextInt();
 
+//iniciamos un ciclo while para que pueda utilizar de forma indefinida la aplicacion hasta que el usuario decida salir
+        while (flag == false) {
 // Utilizamos el dato que nos ha facilitado para realizar un switch con su eleccion.
-        while (optionCrud != 0) {
-
             switch (optionCrud) {
                 case 1: // Agregar nuevo empleado
                     servicio.crearUsuario();
@@ -54,7 +58,13 @@ public class PeralboAntonioJosePruebatec1 {
 
                     break;
                 case 0:
-                    System.out.println("saliendo");
+                    System.out.println(" -----------------------------------");
+                    System.out.println("        -Cerrando aplicacion-");
+                    System.out.println(" -----------------------------------");
+                    if (optionCrud == 0) {
+                        flag = true;
+
+                    }
                     break;
                 default:
                     System.out.println("Por favor ingrese un numero del 0 al 5");
