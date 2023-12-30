@@ -36,17 +36,18 @@ public class ServicesEmpleado {
 
         System.out.println(" Ingrese datos del usuario: ");
         Empleados insertEmpleado = new Empleados();
-        System.out.println(" Ingrese el apellidos: ");
-        createLastName = scanCreate.nextLine();
-        while (createLastName == "") {
-            System.out.println("El campo no puede estar vacio, ingrese los apellidos de nuevo");
-            createLastName = scanCreate.nextLine();
-        }
+        
         System.out.println("Ingrese el nombre: ");
         createName = scanCreate.nextLine();
         while (createName == "") {
             System.out.println("El campo no puede estar vacio, ingrese el nombre de nuevo");
             createName = scanCreate.nextLine();
+        }
+        System.out.println(" Ingrese el apellidos: ");
+        createLastName = scanCreate.nextLine();
+        while (createLastName == "") {
+            System.out.println("El campo no puede estar vacio, ingrese los apellidos de nuevo");
+            createLastName = scanCreate.nextLine();
         }
         System.out.println(" Ingrese el cargo: ");
         createPosition = scanCreate.nextLine();
@@ -60,9 +61,14 @@ public class ServicesEmpleado {
             System.out.println("El valor numerico no puede ser negativo, ingrese el salario de nuevo.");
             createSalary = scanCreate.nextDouble();
         }
-        System.out.println("Ingrese la fecha de inicio (en formato DD/MM/YYYY): ");
+        try {System.out.println("Ingrese la fecha de inicio (en formato DD/MM/YYYY): ");
         createStartDate = scanCreate.next();
         date1 = new SimpleDateFormat("dd/MM/yyyy").parse(createStartDate);
+            
+        } catch (Exception e) {
+            System.out.println("El valor indicado no se adecua al formato, comience de nuevo.");
+        }
+
 
         insertEmpleado.setStartDate(date1);
         insertEmpleado.setSalary(createSalary);
@@ -145,20 +151,24 @@ public class ServicesEmpleado {
                     empleadoEdit.setSalary(newSalary);
                 }
                 control.editarEmpleado(empleadoEdit);
-                System.out.println("Se ha modificado el salario correctamente");
+                System.out.println("Se ha modificado el salario correctamente ");
                 break;
             case 5:
-
-                System.out.println("Ingrese la nueva fecha inicio: ");
+                try {System.out.println("Ingrese la nueva fecha inicio (en formato dd/MM/yyyy) : ");
                 newCreateStartDate = scanEdit.nextLine();
                 newDate = new SimpleDateFormat("dd/MM/yyyy").parse(newCreateStartDate);
                 empleadoEdit.setStartDate(newDate);
                 control.editarEmpleado(empleadoEdit);
                 System.out.println("Se ha modificado la fecha correctamente");
+                
+            } catch (Exception e) {
+                    System.out.println("El valor indicado no se adecua al formato, comience de nuevo.");
+            }
+                
                 break;
 
             default:
-                throw new AssertionError();
+                System.out.println("Ese número no se encuentra entre las opciones");
 
         }
     }
@@ -178,7 +188,7 @@ public class ServicesEmpleado {
 
         ArrayList<Empleados> listaEmpleados2 = control.buscarListaEmpleados();
         for (Empleados listaEmpleado2 : listaEmpleados2) {
-            if (positionFilter.equals(listaEmpleado2.getPosition())) {
+            if (positionFilter.equalsIgnoreCase(listaEmpleado2.getPosition())) {
                 System.out.println(listaEmpleado2.toString());
             }
         }
