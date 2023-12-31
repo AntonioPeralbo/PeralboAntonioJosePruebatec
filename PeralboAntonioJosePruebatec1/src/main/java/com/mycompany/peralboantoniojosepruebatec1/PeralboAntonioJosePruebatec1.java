@@ -1,6 +1,6 @@
 package com.mycompany.peralboantoniojosepruebatec1;
 
-import com.mycompany.peralboantoniojosepruebatec1.models.ServicesEmpleado;
+import com.mycompany.peralboantoniojosepruebatec1.services.ServicesEmpleado;
 
 import java.text.ParseException;
 
@@ -41,7 +41,7 @@ public class PeralboAntonioJosePruebatec1 {
 
                     break;
 
-                case 3: // Para editar cada campo usamos un nuevo switch en el que eliga por consola el atributo que quiera cambiar
+                case 3: // Para editar cada campo usamos un nuevo switch en el que elija por consola el atributo que quiera cambiar
                     servicio.modificarUsuario();
 
                     break;
