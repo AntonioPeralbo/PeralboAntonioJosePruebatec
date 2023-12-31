@@ -1,6 +1,6 @@
 # PRUEBA TÉCNICA 1 ANTONIO JOSÉ PERALBO
 Ejercicio practico en el que el proyecto permite hacer un CRUD ( Create , Read, Update, Destroy) a traves de JPA .
-## COMIENZO DEL PROYECTO
+## INSTALACIÓN E INICIO DEL PROYECTO
 Para ello debemos segir los sieguientes pasos:
 - Clonar el repositorio.
 - Iniciar el gestor de bases de datos (En este caso Xampp).
