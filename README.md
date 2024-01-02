@@ -22,5 +22,5 @@ Para ello debemos segir los sieguientes pasos:
      Cierre de la aplicacion.
      
 ## SUPUESTOS
-  -Al ser una aplicación de empleados entendemos que el id se equipara al numero de empleado por lo que al ser un número unico no habria duplicados.
-  -El formato de la fecha es dd/MM/yyyy , en caso de no intruducirse asi saltara el error y la aplicación volvera a su inicio.
+  - Al ser una aplicación de empleados entendemos que el id se equipara al numero de empleado por lo que al ser un número unico no habria duplicados.
+  - El formato de la fecha es dd/MM/yyyy , en caso de no intruducirse asi saltara el error y la aplicación volvera a su inicio.
